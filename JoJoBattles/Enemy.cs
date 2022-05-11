@@ -12,6 +12,7 @@ namespace JoJoBattles
         /// Имя персонажа
         /// </summary>
         public string Name = "Not defined";
+        public ConsoleColor NameColor = ConsoleColor.White;
         /// <summary>
         /// Описание персонажа
         /// </summary>
@@ -61,6 +62,8 @@ namespace JoJoBattles
         /// </summary>
         public int Strength = 0;
 
+        public List<string> messageBoard = new List<string>();
+
         /// <summary>
         /// Список способностей
         /// </summary>
@@ -73,7 +76,15 @@ namespace JoJoBattles
 
         public void Hit(Enemy enemy)
         {
-            enemy.Hp -= this.Strength;
+            enemy.Hp -= Strength;
+            this.messageBoard.Add("Kia!");
+        }
+
+        public virtual void Reset()
+        {
+            this.messageBoard.Clear();
+            this.Hp = MaxHp;
+            this.Stamina = MaxStamina;
         }
     }
 }

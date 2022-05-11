@@ -11,6 +11,7 @@ namespace JoJoBattles
         public Jotoro()
         {
             Name = "Jotoro";
+            NameColor = ConsoleColor.DarkBlue;
             Description = "";
             Catchphrase = "";
             
@@ -29,6 +30,7 @@ namespace JoJoBattles
         public void OraOra(Enemy enemy)
         {
             enemy.Hp -= this.Strength + 50;
+            this.messageBoard.Add("Ora! Ora! Ora! Ora! Ora!");
         }
     }
 }
